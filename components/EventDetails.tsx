@@ -14,13 +14,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 // Making a reusable component for event details item
 const EventDetailsItem = ({ icon, alt, label }: { icon: string; alt: string; label: string }) => {
 
-    return (
-        <section>
-            <div className="flex-row-gap-2 items-center py-2">
+    return (<div className="flex-row-gap-2 items-center py-2">
                 <Image src={icon} alt={alt} width={20} height={20} />
                 <span className="text-sm text-light-200">{label}</span>
             </div>
-        </section>)
+            )
 }
 
 // Agenda/details component
@@ -45,8 +43,7 @@ const EventTags = ({ tags }: { tags: string[] }) => {
                 <span
                     key={tag}
                     role="status"
-                    className="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full bg-dark-100/40 text-light-100 border border-dark-200 hover:bg-primary/10 hover:text-primary transition"
-                >
+                    className="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full bg-dark-100/40 text-light-100 border border-dark-200 hover:bg-primary/10 hover:text-primary transition">
                     {tag}
                 </span>
             ))}
@@ -68,10 +65,10 @@ const sanitizeDoc = (doc: any) => {
 };
 
 
-const EventDetails = async ({ slug }: { slug: string }) => {
-    // 'use cache';
-    // cacheLife('hours'); // Cache for 1 hour
-    // // const slug = await params;
+const EventDetails = async ({ params }: { params: Promise<string> }) => {
+    'use cache';
+    cacheLife('hours'); // Cache for 1 hour
+    const slug = await params;
 
     let event;
 
