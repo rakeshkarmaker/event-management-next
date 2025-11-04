@@ -40,8 +40,6 @@ export async function GET(request: Request, {params}: RouteParams) : Promise<Nex
         console.error('Error fetching event by slug:', error);
         return NextResponse.json({ message: 'Internal Server Error', status: 500 });
     }
-    
-    const { slug } = await params;
 
 
 }
