@@ -65,9 +65,13 @@ const sanitizeDoc = (doc: any) => {
 };
 
 
+
+
+
+
 const EventDetails = async ({ params }: { params: Promise<string> }) => {
-    'use cache';
-    cacheLife('hours'); // Cache for 1 hour
+    // 'use cache';
+    // cacheLife('hours'); // Cache for 1 hour
     const slug = await params;
 
     let event;
