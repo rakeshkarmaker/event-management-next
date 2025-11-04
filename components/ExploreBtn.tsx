@@ -6,7 +6,7 @@ const ExploreBtn = () => {
         id="explore-btn"
         className="mt-7 mx-auto" 
         onClick={()=>console.log('clicked') }>
-            <a href="#explore-section" className="text-lg font-medium text-white">
+            <a href="/events" className="text-lg font-medium text-white">
                 Explore Events
             </a>
         </button>
